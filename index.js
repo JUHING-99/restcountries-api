@@ -1,7 +1,7 @@
 const cardTemplate = function (image, country) {
   return `<div class="card">
               <img id="flag-image" src="${image}" alt="flag" />
-              <h1 class="center">${country}</h1>
+              <h2 class="center">${country}</h2>
             </div>`;
 };
 

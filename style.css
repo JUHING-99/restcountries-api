@@ -1,5 +1,11 @@
 body {
   font-family: "Roboto", sans-serif;
+  background-color: #FEFEE3;
+
+}
+h1{
+  background-color: #4C956C;
+  padding: 10px;
 }
 
 #countries {
@@ -18,6 +24,7 @@ body {
   box-shadow: 15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
   border-radius: 16px;
   margin: 20px;
+  background-color: #FFFFFF;
 }
 
 #flag-image {

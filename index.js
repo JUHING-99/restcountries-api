@@ -20,3 +20,38 @@ fetch('https://restcountries.com/v3.1/all')
     });
 
 
+
+
+    document.addEventListener("DOMContentLoaded", function() {     
+      let buscador = document.createElement("form");      
+      buscador.id = "buscador";
+      buscador.innerHTML = `<label for="region">Filter by continent</label>
+                              <input type="text" id="region" name="region" placeholder="Continent"><br>
+                              <button type="submit">Submit</button>`;
+
+      document.querySelector("header").appendChild(buscador);   
+      
+ 
+  
+      document.getElementById("buscador").addEventListener("submit", function(event) {   
+
+          event.preventDefault();
+
+          let region = event.target.region.value;  
+          
+          fetch(`https://restcountries.com/v3.1/region/${region}`)
+          .then(res => res.json())
+          .then(countries => {
+        
+              let tarjetas = ""
+        
+            for (let i = 0; i < countries.length; i++) {
+             tarjetas+= cardTemplate(countries[i].flags.png, countries[i].name.common)
+            }
+            countriesNode.innerHTML = tarjetas
+            });
+
+
+        })
+        
+      })
